@@ -86,7 +86,13 @@ const initialState = {
         { id: "Human Resource", name: 'Human Resource', cost: 40 },
         { id: "IT", name: 'IT', cost: 500 },
     ],
-    currency: '£'
+    currency: '£',
+    currencies: [
+        {id: "Dollar", name: 'Dollar', symbol: '$'},
+        {id: "Pound", name: 'Pound', symbol: '£'},
+        {id: "Euro", name: 'Euro', symbol: '€'},
+        {id: "Ruppee", name: 'Ruppee', symbol: '₹'},
+    ]
 };
 
 // 2. Creates the context this is the thing our components import and use to get the state
@@ -115,7 +121,8 @@ export const AppProvider = (props) => {
                 remaining: remaining,
                 dispatch,
                 currency: state.currency,
-                expenseTotal: expenseTotal
+                expenseTotal: expenseTotal,
+                currencies: state.currencies
             }}
         >
             {props.children}
